@@ -182,6 +182,8 @@ if [[ $arch = "arm64" ]]; then
 
         apt install -y --no-install-recommends libgcc-10-dev || exit 127
 
+        export LD_LIBRARY_PATH="/aosp-clang/lib64:$LD_LIBRARY_PATH"
+
         export PATH="/aosp-clang/bin:/aosp-gcc-arm64/bin:/aosp-gcc-arm/bin:/aosp-gcc-host/bin:$PATH"
         export CLANG_TRIPLE="aarch64-linux-gnu-"
         export CROSS_COMPILE="aarch64-linux-android-"
